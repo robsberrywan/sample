@@ -6,9 +6,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+	username = '';
+	pass = '';
 
-  constructor(public navCtrl: NavController) {
+  	constructor(public navCtrl: NavController) {
 
-  }
-
+  	}
+  	
 }
