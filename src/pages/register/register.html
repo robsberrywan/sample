@@ -1,7 +1,28 @@
-<ion-header>
-	<ion-navbar>
-	</ion-navbar>
-</ion-header>
+
 <ion-content padding>
-	
+	<div text-right>
+		<ion-icon name="heart" class="reglogo"></ion-icon>
+	</div>
+	<ion-list>
+		<ion-item>
+			<ion-label floating>Username</ion-label>
+			<ion-input type="text" [(ngModel)]="username"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" [(ngModel)]="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" [(ngModel)]="pass1"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Re-type Password</ion-label>
+			<ion-input type="password" [(ngModel)]="pass2"></ion-input>
+		</ion-item>
+	</ion-list>
+	<div text-center>
+  		<button color=dark ion-button round>Sign me up!</button>
+	</div>
+	<br/><br/><br/><br/><p (click)="toSignIn();">Already have an account? <u>Sign In</u></p>
 </ion-content>

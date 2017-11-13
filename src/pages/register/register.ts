@@ -9,4 +9,7 @@ export class RegisterPage {
   	constructor(public navCtrl: NavController) {
 
   	}
+  	toSignIn(){
+  		this.navCtrl.pop();
+  	}
 }
