@@ -15,15 +15,7 @@ export class LoginPage {
   	register(){
   		this.navCtrl.push(RegisterPage);
   	}
-<<<<<<< HEAD
-
-  	gui(){
-  		this.navCtrl.push(UserPage);
-  	}
-}
-=======
   	signIn(){
       this.navCtrl.setRoot(HomePage);
   	}
 }
->>>>>>> ea898969b33794a968cbcf52e7984a0057454037
