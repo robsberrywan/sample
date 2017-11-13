@@ -10,7 +10,12 @@ export class LoginPage {
 	username = '';
 	pass = '';
   	constructor(public navCtrl: NavController) {}
+
   	register(){
   		this.navCtrl.push(RegisterPage);
+  	}
+
+  	gui(){
+  		this.navCtrl.push(UserPage);
   	}
 }
