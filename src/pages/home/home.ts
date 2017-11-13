@@ -12,7 +12,6 @@ export class HomePage {
     	{ title: 'Register', component: RegisterPage }
     ];
 	constructor(public navCtrl: NavController) {
-
   	}
 	openPage(page) {
     	this.navCtrl.push(page.component);
