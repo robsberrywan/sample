@@ -4,7 +4,6 @@ import { NavController, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 import { RoutePage } from '../route/route';
-import { HomePage } from '../home/home';
 
 import { AngularFireAuth } from "angularfire2/auth";
 
@@ -14,7 +13,6 @@ import { AngularFireAuth } from "angularfire2/auth";
 })
 export class HomePage {
 	pages = [
-    	{ title: 'Home', component: HomePage },
       { title: 'Friends', component: RegisterPage},
       { title: 'Sign Out', component: LoginPage }
   ];
