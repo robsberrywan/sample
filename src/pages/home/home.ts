@@ -4,6 +4,7 @@ import { NavController, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 import { RoutePage } from '../route/route';
+import { HomePage } from '../home/home';
 
 import { AngularFireAuth } from "angularfire2/auth";
 
@@ -12,12 +13,11 @@ import { AngularFireAuth } from "angularfire2/auth";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-
 	pages = [
-    	{ title: 'Register', component: RegisterPage },
+    	{ title: 'Home', component: HomePage },
+      { title: 'Friends', component: RegisterPage},
       { title: 'Sign Out', component: LoginPage }
-    ];
+  ];
 	constructor(private afAuth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController) {}
   
   ionViewWillLoad(){
@@ -31,19 +31,18 @@ export class HomePage {
     });
   }
 	openPage(page) {
-      if(page.component==LoginPage){
-        this.afAuth.auth.signOut().then(() => {
-          this.navCtrl.setRoot(page.component);
-        });
-      }
-    	else{
-        this.navCtrl.push(page.component);
-      }
-  	}
-
-    route(){
-      console.log("asdfdf");
-      this.navCtrl.push(RoutePage);
+    if(page.component==LoginPage){
+      this.afAuth.auth.signOut().then(() => {
+        this.navCtrl.setRoot(page.component);
+      });
     }
+    else{
+      this.navCtrl.push(page.component);
+    }
+  }
 
+  route(){
+    console.log("asdfdf");
+    this.navCtrl.push(RoutePage);
+  }
 }
