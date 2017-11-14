@@ -38,9 +38,7 @@ export class HomePage {
       this.navCtrl.push(page.component);
     }
   }
-
   route(){
-    console.log("asdfdf");
     this.navCtrl.push(RoutePage);
   }
 }

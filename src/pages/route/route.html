@@ -8,16 +8,16 @@
  <br><br><br><br><br><br><br><ion-item>
  	
     <ion-label floating>Origin</ion-label>
-    <ion-input type=""></ion-input>
+    <ion-input type="text" [(ngModel)]="route.origin"></ion-input>
   </ion-item>
 
   <ion-item>
   	<br><br><br><br>
     <ion-label floating>Destination</ion-label>
-    <ion-input type=""></ion-input>
+    <ion-input type="text" [(ngModel)]="route.destination"></ion-input>
   </ion-item>
   
 <div text-center>
-  	<button color=secondary ion-button (click)="map();">GO!</button>
+  	<button color=secondary ion-button (click)="map(route.origin, route.destination);">GO!</button>
 </div>
 </ion-list>
