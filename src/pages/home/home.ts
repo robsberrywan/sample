@@ -3,6 +3,7 @@ import { NavController, ToastController } from 'ionic-angular';
 
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
+import { RoutePage } from '../route/route';
 
 import { AngularFireAuth } from "angularfire2/auth";
 
@@ -11,15 +12,14 @@ import { AngularFireAuth } from "angularfire2/auth";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  route(){
-      this.navCtrl.push(RoutePage);
-    }
+
 
 	pages = [
     	{ title: 'Register', component: RegisterPage },
       { title: 'Sign Out', component: LoginPage }
     ];
 	constructor(private afAuth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController) {}
+  
   ionViewWillLoad(){
     this.afAuth.authState.subscribe(data => {
       if(data.email && data.uid){
@@ -40,5 +40,10 @@ export class HomePage {
         this.navCtrl.push(page.component);
       }
   	}
+
+    route(){
+      console.log("asdfdf");
+      this.navCtrl.push(RoutePage);
+    }
 
 }
