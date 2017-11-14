@@ -16,15 +16,14 @@ import { TripsPage } from '../trips/trips';
   templateUrl: 'map.html',
 })
 export class MapPage {
-  public origin;
-  public destination;
+  origin = "" ;
+  destination = "";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.origin = navParams.get("origin");
-    this.destination = navParams.get("dest");
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+    origin = this.navParams.get("origin");
+    destination = this.navParams.get("destination");
   }
 
   selectRoutes(){

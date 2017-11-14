@@ -20,7 +20,7 @@ export class RoutePage {
   	map(route: Route){
   		this.navCtrl.push(MapPage, {
   			origin: route.origin,
-  			dest: route.destination
+  			destination: route.destination
   		});	
   	}
 }
