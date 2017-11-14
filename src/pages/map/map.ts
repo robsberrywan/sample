@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { TripsPage } from '../trips/trips';
 
 /**
@@ -15,8 +16,11 @@ import { TripsPage } from '../trips/trips';
   templateUrl: 'map.html',
 })
 export class MapPage {
-
+  public origin;
+  public destination;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.origin = navParams.get("origin");
+    this.destination = navParams.get("dest");
   }
 
   ionViewDidLoad() {

@@ -18,6 +18,9 @@ export class RoutePage {
   	constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   	map(route: Route){
-  		this.navCtrl.push(MapPage);
+  		this.navCtrl.push(MapPage, {
+  			origin: route.origin,
+  			dest: route.destination
+  		});	
   	}
 }
