@@ -43,6 +43,7 @@
   </ion-header>
   <ion-content>
     <ion-list>
+
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{ p.title }}
       </button>
@@ -50,5 +51,12 @@
   </ion-content>
 </ion-menu>
 
+<div text-center>
+<br><br><br><br><img src="assets/img/tip.png" align="center">
+<br><br><br><br><button ion-button class="btn" color="secondary" outline large>New Trip</button>
+<button ion-button color="secondary" outline large>My Trips</button>
+<br><button ion-button color="secondary" outline large>Trip Planner</button>
+<button ion-button color="secondary" outline large>Settings</button>
+</div>
+
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
->>>>>>> 272a25857b63d142ff2925f934533a292941d145
