@@ -1,3 +1,5 @@
 Dependencies:
 
 npm install firebase angularfire2 --save
+npm install leaflet --save
+npm install @types/leaflet --save

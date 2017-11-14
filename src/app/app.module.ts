@@ -15,6 +15,7 @@ import { TripsPage } from '../pages/trips/trips';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
 export const FIREBASE_CONF = {
   apiKey: "AIzaSyDXJtxVDEFknxJYwWAjKCce-mHuDxY2gqU",
   authDomain: "project-design-2018d.firebaseapp.com",
