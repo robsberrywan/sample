@@ -25,11 +25,11 @@ export class MapPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    origin = this.navParams.get("origin");
+    this.origin = this.navParams.get("origin");
+    this.destination = this.navParams.get("destination");
     this.center = [48.775556, 9.182778];
     this.initMap();
   }
-
   selectRoutes(){
   	this.navCtrl.push(TripsPage);
   }
