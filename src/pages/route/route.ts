@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { MapPage } from '../map/map';
 
 /**
  * Generated class for the RoutePage page.
@@ -13,4 +14,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RoutePage {
   	constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  	map(){
+  		this.navCtrl.push(MapPage);
+  	}
 }
