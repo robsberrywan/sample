@@ -11,6 +11,10 @@ import { AngularFireAuth } from "angularfire2/auth";
   templateUrl: 'home.html'
 })
 export class HomePage {
+  route(){
+      this.navCtrl.push(RoutePage);
+    }
+
 	pages = [
     	{ title: 'Register', component: RegisterPage },
       { title: 'Sign Out', component: LoginPage }
@@ -36,4 +40,5 @@ export class HomePage {
         this.navCtrl.push(page.component);
       }
   	}
+
 }
