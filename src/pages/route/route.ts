@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { MapPage } from '../map/map';
 import { Route } from "../../models/route";
+
 /**
  * Generated class for the RoutePage page.
  *
