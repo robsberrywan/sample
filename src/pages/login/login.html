@@ -4,16 +4,16 @@
 	</div>
 	<ion-list>
 		<ion-item>
-			<ion-label floating>Username</ion-label>
-			<ion-input type="text" [(ngModel)]="username"></ion-input>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" [(ngModel)]="user.email"></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label floating>Password</ion-label>
-			<ion-input type="password" [(ngModel)]="pass"></ion-input>
+			<ion-input type="password" [(ngModel)]="user.password"></ion-input>
 		</ion-item>
 	</ion-list>
 	<div text-center>
-  		<button color=dark (click)="signIn();" ion-button round>Sign In</button>
+  		<button color=dark (click)="signIn(user);" ion-button round>Sign In</button>
 	</div>
 	<div text-center>
 		<ion-icon name="ios-arrow-dropdown-circle" class="or"></ion-icon>
