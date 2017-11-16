@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 import { AngularFireAuth } from "angularfire2/auth";
 import { User } from "../../models/user";
@@ -21,7 +22,7 @@ export class LoginPage {
       try{
         const res = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
         if(res){
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(TabsPage);
         }
         else{
           console.log("Email or password is incorrect!");

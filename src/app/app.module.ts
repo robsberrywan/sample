@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { RoutePage } from '../pages/route/route';
 import { MapPage } from '../pages/map/map';
 import { TripsPage } from '../pages/trips/trips';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -33,7 +34,8 @@ export const FIREBASE_CONF = {
     HomePage,
     RoutePage,
     MapPage,
-    TripsPage
+    TripsPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ export const FIREBASE_CONF = {
     HomePage,
     RoutePage,
     MapPage,
-    TripsPage
+    TripsPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
