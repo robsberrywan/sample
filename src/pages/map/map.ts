@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 import { TripsPage } from '../trips/trips';
 import L from "leaflet";
@@ -38,7 +39,17 @@ export class MapPage {
       center: this.center,
       zoom: 13
     });
-
+    this.map.locate({
+      setView: true,
+      maxZoom: 15
+    }).on('locationfound', (e) => {
+      let markerGroup = L.featureGroup();
+      let marker: any = L.marker([e.latitude, e.longitude]).on('click', () => {
+        markerGroup.addLayer(marker);
+        this.map.addLayer(markerGroup);
+      })
+    });
     L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(this.map);
   }
+  
 }
