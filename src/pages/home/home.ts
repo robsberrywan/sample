@@ -4,6 +4,8 @@ import { NavController, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 import { RoutePage } from '../route/route';
+import L from "leaflet";
+import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 import { AngularFireAuth } from "angularfire2/auth";
 
@@ -12,6 +14,8 @@ import { AngularFireAuth } from "angularfire2/auth";
   templateUrl: 'home.html'
 })
 export class HomePage {
+  map: L.Map;
+  center: L.PointTuple;
 	pages = [
       { title: 'Friends', component: RegisterPage},
       { title: 'Sign Out', component: LoginPage }
@@ -19,6 +23,8 @@ export class HomePage {
 	constructor(private afAuth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController) {}
   
   ionViewWillLoad(){
+    this.initMap();
+    this.center = [48.775556, 9.182778];
     this.afAuth.authState.subscribe(data => {
       if(data.email && data.uid){
         this.toast.create({
@@ -40,5 +46,18 @@ export class HomePage {
   }
   route(){
     this.navCtrl.push(RoutePage);
+  }
+  initMap(){
+    this.map = L.map('map',{
+      center: this.center,
+      zoom: 13
+    });
+    this.map.locate({
+      setView: true,
+      maxZoom: 15
+    }).on('locationfound', (e) => {
+      })
+    });
+    L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(this.map);
   }
 }
