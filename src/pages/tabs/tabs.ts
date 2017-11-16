@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from "../home/home";
+import { MapPage } from "../map/map";
 
 /**
  * Generated class for the RoutePage page.
@@ -14,5 +15,6 @@ import { HomePage } from "../home/home";
 })
 export class TabsPage {
 	tab1Root = HomePage;
+	tab2Root = MapPage;
   	constructor(public navCtrl: NavController, public navParams: NavParams) {}
 }
