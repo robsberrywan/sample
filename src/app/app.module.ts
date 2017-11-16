@@ -16,6 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { GeocoderProvider } from '../providers/geocoder/geocoder';
 
 export const FIREBASE_CONF = {
   apiKey: "AIzaSyDXJtxVDEFknxJYwWAjKCce-mHuDxY2gqU",
@@ -58,7 +59,8 @@ export const FIREBASE_CONF = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AngularFireAuth
+    AngularFireAuth,
+    GeocoderProvider
   ]
 })
 export class AppModule {}
